@@ -9,7 +9,7 @@ const getDataDistrict = async (req: Request, res: Response) => {
     const { district } = req.body
 
     try{
-        const data = await prisma.graphData.findMany({
+        const data = await prisma.provider.findMany({
             where: {
                 district: district
             }
@@ -26,7 +26,7 @@ const getDataState = async (req: Request, res: Response) => {
     const { state } = req.body
 
     try{
-        const data = await prisma.graphData.findMany({
+        const data = await prisma.provider.findMany({
             where: {
                 state: state
             }
@@ -77,5 +77,5 @@ const router = Router()
 router.get("/districtData", adminAuth, getDataDistrict)
 router.get("/stateData", adminAuth, getDataState)
 router.post("/state",getState)
-router.post("/stateUser",getState)
+router.post("/stateUser",getStateUser)
 export default router
