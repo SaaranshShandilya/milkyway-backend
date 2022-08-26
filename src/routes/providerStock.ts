@@ -78,28 +78,6 @@ const getInStockItemsPost = async (req: Request, res: Response) => {
   }
 };
 
-// const orderItemsForProvider = async (req: Request, res: Response) => {
-//     const { userID, providerID, accepted, items, prices } = req.body
-
-//     try{
-//         const orderForProviderData = await prisma.provider.update({
-//             where: {
-//                 id: providerID
-//             },
-//             data: {
-//                 c_id: userID,
-//                 accepted: accepted,
-//                 orderItems: items,
-//                 orderPrices: prices
-//             }
-//         })
-//         return res.json(orderForProviderData)
-//     }catch (error){
-//         console.log(error)
-//         return res.status(500).json(error)
-//     }
-
-// }
 
 const orderItemsForProvider = async (req: Request, res: Response) => {
   const { providerID, userID, items, prices, quant, total } = req.body;
