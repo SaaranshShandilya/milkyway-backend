@@ -76,6 +76,7 @@ model Provider {
   pH            String[]
   rate          String[]
   date          String[]
+  odour         Int[]                  @default([])
   providerOrder ProviderOrder[]
   inStockItems  ProviderInStockItems[]
   // orderItems    String[]
