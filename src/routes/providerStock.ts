@@ -1,6 +1,5 @@
 import { PrismaClient } from "@prisma/client";
 import { Request, Response, Router } from "express";
-import auth from "../middleware/auth";
 import providerAuth from "../middleware/providerAuth";
 
 const prisma = new PrismaClient();
@@ -265,6 +264,6 @@ router.put("/putOrderInHistory", providerAuth, putOrderInHistory);
 router.get("/getLiveOrder", providerAuth, getLiveOrders);
 router.get("/getOrderHistory", providerAuth, getOrderHistory);
 router.post("/deleteOrder", providerAuth, deleteOrder);
-// router.post("/orderForProvider", auth, orderItemsForProvider)
+
 
 export default router;

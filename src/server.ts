@@ -63,13 +63,6 @@ app.use("/api/graphDataProvider", graphDataRoutes)
 
 app.get('/', (_, res) => res.send("Hello World!"))
 
-app.get('/', function (req, res) {
-  console.log(req.socket.remoteAddress);
-  console.log(req.ip);
-  res.send("your IP is: " + req.ip);
-})
-
-
 app.listen(5000, async () => {
     console.log(`Server running at http://localhost:${PORT}`)
 

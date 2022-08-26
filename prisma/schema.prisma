@@ -40,7 +40,6 @@ model Orders {
   id         String   @id @default(cuid())
   user       User     @relation(fields: [id], references: [id])
   providerID String   @default("")
-  // provider Provider
   items      String[]
   prices     String[]
   history    Boolean  @default(false)
@@ -54,13 +53,6 @@ model OrderHistory {
   items String[]
   total String
 }
-
-// model Items {
-//   id    String @id @default(cuid())
-//   order Orders @relation(fields: [id], references: [id])
-//   item  String
-//   price Int
-// }
 
 model Provider {
   id            String                 @id @default(cuid())
@@ -79,13 +71,6 @@ model Provider {
   odour         Int[]                  @default([])
   providerOrder ProviderOrder[]
   inStockItems  ProviderInStockItems[]
-  // orderItems    String[]
-  // orderPrices   String[]
-  // quantities    String[]
-  // c_id          String
-  // accepted Boolean? @default(false)
-  // history  Boolean? @default(false)
-  // live_order ProviderLiveOrder[]
   stars         Int                    @default(0)
 }
 
