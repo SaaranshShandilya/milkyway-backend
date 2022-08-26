@@ -5,7 +5,7 @@ import cookie from "cookie";
 const sgMail = require("@sendgrid/mail");
 
 sgMail.setApiKey(
-  "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"
+  process.env.KEY
 );
 
 import auth from "../middleware/auth";
